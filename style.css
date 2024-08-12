@@ -1,0 +1,165 @@
+/* https://fonts.google.com/share?selection.family=Oswald:wght@200..700 */
+
+nav ul {
+    list-style-type: none;
+}
+
+nav {
+    background-color: rgb(64, 180, 226);
+    color: white;
+    height: 65px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav, ul {
+    margin: 0;
+    padding: 0;
+}
+
+.gameContainer {
+    background-color: cornflowerblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    height: 100vh;
+    width: 100%;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+    font-family: Arial, Helvetica, sans-serif;
+    width: 30vw;
+    height: 30vw;
+    margin-top: 20px;
+    position: relative;
+}
+
+.box {
+    border: 2px solid black;
+    font-size: 6vw;
+    /* pixels wasn't used to make it responsive */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s ease;
+    /* the grids keep changing whenever a move is made. fix it */
+}
+
+.box:hover {
+    background-color: rgba(255, 255, 255, 0.212);
+}
+
+.info {
+    font-size: 25px;
+    /* make the width fixed */
+}
+
+.gameInfo {
+    padding: 0 35px;
+    font-family: sans-serif;
+    /* change the font later */
+    font-size: large;
+}
+
+.imgbox img {
+    width: 0;
+    padding: 15px 0px;
+    transition: width 0.5s ease-in-out;
+}
+
+.br-0 {
+    border-right: 0;
+}
+.bl-0 {
+    border-left: 0;
+}
+.bt-0 {
+    border-top: 0;
+}
+.bb-0 {
+    border-bottom: 0;
+}
+
+#reset {
+    margin: 0px 10px;
+    padding: 7px 26px;
+    background-color: rgb(255, 255, 255); /* Added missing semicolon */
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+#reset:hover {
+    background-color: rgb(210, 205, 205);
+    color: rgb(0, 0, 0);
+}
+
+
+@keyframes drawLine {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.line {
+    position: absolute;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.59);
+    visibility: hidden; /* Initially hidden */
+    width: 0; /* Initial width to 0 to animate it from 0 to full width */
+}
+
+/* Style the label */
+label {
+    margin: 11px 0;
+    font-size: 15px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Hide the default checkbox */
+#bgm {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px; /* Space between checkbox and text */
+    border: 2px solid black;
+    border-radius: 4px;
+    background-color: white;
+    display: inline-block;
+    position: relative;
+}
+
+/* Custom checkbox checked state */
+#bgm:checked {
+    background-color: cornflowerblue;
+    border-color: cornflowerblue;
+}
+
+/* Checkmark (tick) */
+#bgm:checked::after {
+    content: '✔';
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+}
